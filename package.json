@@ -4,6 +4,7 @@
   "description": "Description for selecteur",
   "private": true,
   "dependencies": {
+    "gulp-sass": "^1.3.3"
   },
   "devDependencies": {
     "browser-sync": "2.2.3",
