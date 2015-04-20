@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "baseName": "selecteur",
+    "packageName": "com.redoute.selecteur",
+    "packageFolder": "com/redoute/selecteur",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "useCompass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "gulp",
+    "javaVersion": "7",
+    "rememberMeKey": "6ebfd1d6b90d3d052efb0cc201f865bb4fabab3e"
+  }
+}
