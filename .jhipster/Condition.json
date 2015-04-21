@@ -1,0 +1,89 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Perimeter",
+            "relationshipNameCapitalized": "Perimeter",
+            "relationshipFieldName": "perimeter",
+            "otherEntityName": "perimeter",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Perimeter",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "author",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Author",
+            "fieldNameUnderscored": "author",
+            "fieldInJavaBeanMethod": "Author",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "updateDate",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "UpdateDate",
+            "fieldNameUnderscored": "update_date",
+            "fieldInJavaBeanMethod": "UpdateDate",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "state",
+            "fieldType": "String",
+            "fieldNameCapitalized": "State",
+            "fieldNameUnderscored": "state",
+            "fieldInJavaBeanMethod": "State",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "query",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Query",
+            "fieldNameUnderscored": "query",
+            "fieldInJavaBeanMethod": "Query",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "nbOffer",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "NbOffer",
+            "fieldNameUnderscored": "nb_offer",
+            "fieldInJavaBeanMethod": "NbOffer",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "nbItem",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "NbItem",
+            "fieldNameUnderscored": "nb_item",
+            "fieldInJavaBeanMethod": "NbItem",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "nbProduct",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "NbProduct",
+            "fieldNameUnderscored": "nb_product",
+            "fieldInJavaBeanMethod": "NbProduct",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "changelogDate": "20150421160106",
+    "pagination": "pager",
+    "validation": false
+}

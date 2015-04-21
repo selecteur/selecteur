@@ -1,0 +1,19 @@
+{
+    "selecteurApp": {
+        "commercialOperation" : {
+            "home": {
+                "title": "CommercialOperations",
+                "createLabel": "Create a new CommercialOperation",
+                "createOrEditLabel": "Create or edit a CommercialOperation"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete CommercialOperation {{ id }}?"
+            },
+            "detail": {
+                "title": "CommercialOperation"
+            },
+            "providerCode": "ProviderCode",
+            "Domain": "Domain"
+        }
+    }
+}

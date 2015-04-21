@@ -1,0 +1,20 @@
+{
+    "selecteurApp": {
+        "animation" : {
+            "home": {
+                "title": "Animations",
+                "createLabel": "Create a new Animation",
+                "createOrEditLabel": "Create or edit a Animation"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Animation {{ id }}?"
+            },
+            "detail": {
+                "title": "Animation"
+            },
+            "providerAnimationCode": "ProviderAnimationCode",
+            "providerListCode": "ProviderListCode",
+            "OffersSerie": "OffersSerie"
+        }
+    }
+}

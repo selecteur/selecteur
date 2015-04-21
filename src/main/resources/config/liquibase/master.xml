@@ -5,5 +5,13 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150421154322_added_entity_Domain.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150421154608_added_entity_Perimiter.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150421154848_added_entity_OffersSerie.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150421155643_added_entity_Perimeter.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150421160106_added_entity_Condition.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150421160207_added_entity_CommercialOperation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150421160325_added_entity_Animation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20150421160357_added_entity_Exposition.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

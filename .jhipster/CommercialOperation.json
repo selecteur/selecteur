@@ -1,0 +1,35 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Domain",
+            "relationshipNameCapitalized": "Domain",
+            "relationshipFieldName": "domain",
+            "otherEntityName": "domain",
+            "relationshipType": "one-to-one",
+            "otherEntityNameCapitalized": "Domain",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "providerCode",
+            "fieldType": "String",
+            "fieldNameCapitalized": "ProviderCode",
+            "fieldNameUnderscored": "provider_code",
+            "fieldInJavaBeanMethod": "ProviderCode",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150421160207",
+    "pagination": "pager",
+    "validation": false
+}

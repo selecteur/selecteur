@@ -1,0 +1,25 @@
+{
+    "selecteurApp": {
+        "perimiter" : {
+            "home": {
+                "title": "Perimiters",
+                "createLabel": "Create a new Perimiter",
+                "createOrEditLabel": "Create or edit a Perimiter"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Perimiter {{ id }}?"
+            },
+            "detail": {
+                "title": "Perimiter"
+            },
+            "author": "Author",
+            "updateTime": "UpdateTime",
+            "name": "Name",
+            "state": "State",
+            "isTemplate": "IsTemplate",
+            "domainIndex": "DomainIndex",
+            "Domain": "Domain",
+            "Condition": "Condition"
+        }
+    }
+}

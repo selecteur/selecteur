@@ -1,0 +1,25 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "OffersSerie",
+            "relationshipNameCapitalized": "OffersSerie",
+            "relationshipFieldName": "offersSerie",
+            "otherEntityName": "offersSerie",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "OffersSerie",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150421160357",
+    "pagination": "pager",
+    "validation": false
+}

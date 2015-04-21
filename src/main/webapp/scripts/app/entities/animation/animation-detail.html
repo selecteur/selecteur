@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span translate="selecteurApp.animation.detail.title">Animation</span> {{animation.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.animation.providerAnimationCode">ProviderAnimationCode</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{animation.providerAnimationCode}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.animation.providerListCode">ProviderListCode</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{animation.providerListCode}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.animation.OffersSerie">OffersSerie</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{animation.OffersSerie.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="animation"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

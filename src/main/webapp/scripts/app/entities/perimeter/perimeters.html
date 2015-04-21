@@ -1,0 +1,161 @@
+<div>
+
+    <h2 translate="selecteurApp.perimeter.home.title">Perimeter</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#savePerimeterModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="selecteurApp.perimeter.home.createLabel">Create a new Perimeter</span>
+    </button>
+    <div class="modal fade" id="savePerimeterModal" tabindex="-1" role="dialog" aria-labelledby="myPerimeterLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myPerimeterLabel" translate="selecteurApp.perimeter.home.createOrEditLabel">Create or edit a Perimeter</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="perimeter.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="selecteurApp.perimeter.author">Author</label>
+                            <input type="text" class="form-control" name="author"
+                                   ng-model="perimeter.author">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.perimeter.updateTime">UpdateTime</label>
+                            <input type="datetime-local" class="form-control" name="updateTime"
+                                   ng-model="perimeter.updateTime" ng-model-options="{timezone: 'UTC'}">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.perimeter.name">Name</label>
+                            <input type="text" class="form-control" name="name"
+                                   ng-model="perimeter.name">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.perimeter.state">State</label>
+                            <input type="text" class="form-control" name="state"
+                                   ng-model="perimeter.state">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.perimeter.isTemplate">IsTemplate</label>
+                            <input type="checkbox" class="form-control" name="isTemplate"
+                                   ng-model="perimeter.isTemplate">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.perimeter.domainIndex">DomainIndex</label>
+                            <input type="number" class="form-control" name="domainIndex"
+                                   ng-model="perimeter.domainIndex">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="selecteurApp.perimeter.Domain">Domain</label>
+                            <select class="form-control" name="Domain" ng-model="perimeter.domain.id" ng-options="domain.id as domain.id for domain in domains">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deletePerimeterConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(perimeter.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="selecteurApp.perimeter.delete.question" translate-values="{id: '{{perimeter.id}}'}">Are you sure you want to delete this Perimeter?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="selecteurApp.perimeter.author">Author</th>
+                    <th translate="selecteurApp.perimeter.updateTime">UpdateTime</th>
+                    <th translate="selecteurApp.perimeter.name">Name</th>
+                    <th translate="selecteurApp.perimeter.state">State</th>
+                    <th translate="selecteurApp.perimeter.isTemplate">IsTemplate</th>
+                    <th translate="selecteurApp.perimeter.domainIndex">DomainIndex</th>
+                    <th translate="selecteurApp.perimeter.Domain">Domain</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="perimeter in perimeters">
+                    <td><a ui-sref="perimeterDetail({id:perimeter.id})">{{perimeter.id}}</a></td>
+                    <td>{{perimeter.author}}</td>
+                    <td>{{perimeter.updateTime}}</td>
+                    <td>{{perimeter.name}}</td>
+                    <td>{{perimeter.state}}</td>
+                    <td>{{perimeter.isTemplate}}</td>
+                    <td>{{perimeter.domainIndex}}</td>
+                    <td>{{perimeter.Domain.id}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="perimeterDetail({id:perimeter.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(perimeter.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(perimeter.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pager">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a href="#">&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a href="#">&lt;</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a href="#">&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a href="#">&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+{
+    "selecteurApp": {
+        "exposition" : {
+            "home": {
+                "title": "Expositions",
+                "createLabel": "Create a new Exposition",
+                "createOrEditLabel": "Create or edit a Exposition"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Exposition {{ id }}?"
+            },
+            "detail": {
+                "title": "Exposition"
+            },
+            "OffersSerie": "OffersSerie"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "selecteurApp": {
+        "offersSerie" : {
+            "home": {
+                "title": "OffersSeries",
+                "createLabel": "Créer un nouveau OffersSerie",
+                "createOrEditLabel": "Créer ou éditer un OffersSerie"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le OffersSerie {{ id }} ?"
+            },
+            "detail": {
+                "title": "OffersSerie"
+            },
+            "author": "Author",
+            "updateDate": "UpdateDate",
+            "query": "Query",
+            "name": "Name",
+            "offersIds": "OffersIds",
+            "inputAction": "InputAction",
+            "outputAction": "OutputAction",
+            "state": "State",
+            "Domain": "Domain",
+            "Animation": "Animation",
+            "Exposition": "Exposition"
+        }
+    }
+}
+

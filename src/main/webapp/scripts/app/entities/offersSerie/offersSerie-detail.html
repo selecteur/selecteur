@@ -1,0 +1,94 @@
+
+<div>
+    <h2><span translate="selecteurApp.offersSerie.detail.title">OffersSerie</span> {{offersSerie.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.author">Author</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.author}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.updateDate">UpdateDate</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.updateDate}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.query">Query</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.query}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.name">Name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.offersIds">OffersIds</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.offersIds}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.inputAction">InputAction</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.inputAction}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.outputAction">OutputAction</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.outputAction}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.state">State</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.state}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.offersSerie.Domain">Domain</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{offersSerie.Domain.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="offersSerie"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

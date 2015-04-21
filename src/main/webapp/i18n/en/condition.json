@@ -1,0 +1,25 @@
+{
+    "selecteurApp": {
+        "condition" : {
+            "home": {
+                "title": "Conditions",
+                "createLabel": "Create a new Condition",
+                "createOrEditLabel": "Create or edit a Condition"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Condition {{ id }}?"
+            },
+            "detail": {
+                "title": "Condition"
+            },
+            "author": "Author",
+            "updateDate": "UpdateDate",
+            "state": "State",
+            "query": "Query",
+            "nbOffer": "NbOffer",
+            "nbItem": "NbItem",
+            "nbProduct": "NbProduct",
+            "Perimeter": "Perimeter"
+        }
+    }
+}

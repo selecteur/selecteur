@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span translate="selecteurApp.condition.detail.title">Condition</span> {{condition.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.condition.author">Author</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{condition.author}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.condition.updateDate">UpdateDate</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{condition.updateDate}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.condition.state">State</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{condition.state}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.condition.query">Query</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{condition.query}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.condition.nbOffer">NbOffer</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{condition.nbOffer}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.condition.nbItem">NbItem</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{condition.nbItem}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.condition.nbProduct">NbProduct</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{condition.nbProduct}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.condition.Perimeter">Perimeter</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{condition.Perimeter.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="condition"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

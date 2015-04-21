@@ -7,6 +7,14 @@
             "opcom": "Opération Comerciale",
             "entities": {
                 "main": "Entités",
+                "domain": "Domain",
+                "perimiter": "Perimiter",
+                "offersSerie": "OffersSerie",
+                "perimeter": "Perimeter",
+                "condition": "Condition",
+                "commercialOperation": "CommercialOperation",
+                "animation": "Animation",
+                "exposition": "Exposition",
                 "additionalEntity": "JHipster will add addtional entities"
             },
             "account": {

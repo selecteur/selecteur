@@ -1,0 +1,23 @@
+{
+    "selecteurApp": {
+        "domain" : {
+            "home": {
+                "title": "Domains",
+                "createLabel": "Créer un nouveau Domain",
+                "createOrEditLabel": "Créer ou éditer un Domain"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Domain {{ id }} ?"
+            },
+            "detail": {
+                "title": "Domain"
+            },
+            "author": "Author",
+            "updateTime": "UpdateTime",
+            "CommercialOperation": "CommercialOperation",
+            "Perimeter": "Perimeter",
+            "OffersSerie": "OffersSerie"
+        }
+    }
+}
+

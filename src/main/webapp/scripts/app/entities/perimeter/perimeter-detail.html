@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="selecteurApp.perimeter.detail.title">Perimeter</span> {{perimeter.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.perimeter.author">Author</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{perimeter.author}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.perimeter.updateTime">UpdateTime</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{perimeter.updateTime}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.perimeter.name">Name</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{perimeter.name}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.perimeter.state">State</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{perimeter.state}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.perimeter.isTemplate">IsTemplate</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{perimeter.isTemplate}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.perimeter.domainIndex">DomainIndex</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{perimeter.domainIndex}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="selecteurApp.perimeter.Domain">Domain</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{perimeter.Domain.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="perimeter"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

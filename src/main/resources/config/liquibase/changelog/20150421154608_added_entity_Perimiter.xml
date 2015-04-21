@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Perimiter.
+    -->
+    <changeSet id="20150421154608" author="jhipster">
+        <createTable tableName="T_PERIMITER">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="author" type="varchar(255)"/>
+            <column name="update_time" type="timestamp"/>
+            <column name="name" type="varchar(255)"/>
+            <column name="state" type="varchar(255)"/>
+            <column name="is_template" type="bit"/>
+            <column name="domain_index" type="integer"/>
+            <column name="domain_id" type="bigint"/>
+        </createTable>
+        <dropDefaultValue tableName="T_PERIMITER" columnName="update_time" columnDataType="datetime"/>
+
+        
+        <addForeignKeyConstraint baseColumnNames="domain_id"
+                                 baseTableName="T_PERIMITER"
+                                 constraintName="fk_perimiter_domain_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="T_DOMAIN"/>
+
+    </changeSet>
+</databaseChangeLog>

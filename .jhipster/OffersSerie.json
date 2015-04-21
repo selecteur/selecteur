@@ -1,0 +1,116 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "Domain",
+            "relationshipNameCapitalized": "Domain",
+            "relationshipFieldName": "domain",
+            "otherEntityName": "domain",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Domain",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "Animation",
+            "relationshipNameCapitalized": "Animation",
+            "relationshipFieldName": "animation",
+            "otherEntityName": "animation",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Animation"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "Exposition",
+            "relationshipNameCapitalized": "Exposition",
+            "relationshipFieldName": "exposition",
+            "otherEntityName": "exposition",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Exposition"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "author",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Author",
+            "fieldNameUnderscored": "author",
+            "fieldInJavaBeanMethod": "Author",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "updateDate",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "UpdateDate",
+            "fieldNameUnderscored": "update_date",
+            "fieldInJavaBeanMethod": "UpdateDate",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "query",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Query",
+            "fieldNameUnderscored": "query",
+            "fieldInJavaBeanMethod": "Query",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Name",
+            "fieldNameUnderscored": "name",
+            "fieldInJavaBeanMethod": "Name",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "offersIds",
+            "fieldType": "Long",
+            "fieldNameCapitalized": "OffersIds",
+            "fieldNameUnderscored": "offers_ids",
+            "fieldInJavaBeanMethod": "OffersIds",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "inputAction",
+            "fieldType": "String",
+            "fieldNameCapitalized": "InputAction",
+            "fieldNameUnderscored": "input_action",
+            "fieldInJavaBeanMethod": "InputAction",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "outputAction",
+            "fieldType": "String",
+            "fieldNameCapitalized": "OutputAction",
+            "fieldNameUnderscored": "output_action",
+            "fieldInJavaBeanMethod": "OutputAction",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "state",
+            "fieldType": "String",
+            "fieldNameCapitalized": "State",
+            "fieldNameUnderscored": "state",
+            "fieldInJavaBeanMethod": "State",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "changelogDate": "20150421154848",
+    "pagination": "pager",
+    "validation": false
+}

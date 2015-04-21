@@ -1,0 +1,44 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "OffersSerie",
+            "relationshipNameCapitalized": "OffersSerie",
+            "relationshipFieldName": "offersSerie",
+            "otherEntityName": "offersSerie",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "OffersSerie",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "providerAnimationCode",
+            "fieldType": "String",
+            "fieldNameCapitalized": "ProviderAnimationCode",
+            "fieldNameUnderscored": "provider_animation_code",
+            "fieldInJavaBeanMethod": "ProviderAnimationCode",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "providerListCode",
+            "fieldType": "String",
+            "fieldNameCapitalized": "ProviderListCode",
+            "fieldNameUnderscored": "provider_list_code",
+            "fieldInJavaBeanMethod": "ProviderListCode",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150421160325",
+    "pagination": "pager",
+    "validation": false
+}

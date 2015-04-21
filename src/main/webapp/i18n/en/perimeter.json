@@ -1,0 +1,25 @@
+{
+    "selecteurApp": {
+        "perimeter" : {
+            "home": {
+                "title": "Perimeters",
+                "createLabel": "Create a new Perimeter",
+                "createOrEditLabel": "Create or edit a Perimeter"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Perimeter {{ id }}?"
+            },
+            "detail": {
+                "title": "Perimeter"
+            },
+            "author": "Author",
+            "updateTime": "UpdateTime",
+            "name": "Name",
+            "state": "State",
+            "isTemplate": "IsTemplate",
+            "domainIndex": "DomainIndex",
+            "Domain": "Domain",
+            "Condition": "Condition"
+        }
+    }
+}

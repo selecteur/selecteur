@@ -1,0 +1,177 @@
+<div>
+
+    <h2 translate="selecteurApp.offersSerie.home.title">OffersSerie</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveOffersSerieModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="selecteurApp.offersSerie.home.createLabel">Create a new OffersSerie</span>
+    </button>
+    <div class="modal fade" id="saveOffersSerieModal" tabindex="-1" role="dialog" aria-labelledby="myOffersSerieLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myOffersSerieLabel" translate="selecteurApp.offersSerie.home.createOrEditLabel">Create or edit a OffersSerie</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="offersSerie.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.author">Author</label>
+                            <input type="text" class="form-control" name="author"
+                                   ng-model="offersSerie.author">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.updateDate">UpdateDate</label>
+                            <input type="datetime-local" class="form-control" name="updateDate"
+                                   ng-model="offersSerie.updateDate" ng-model-options="{timezone: 'UTC'}">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.query">Query</label>
+                            <input type="text" class="form-control" name="query"
+                                   ng-model="offersSerie.query">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.name">Name</label>
+                            <input type="text" class="form-control" name="name"
+                                   ng-model="offersSerie.name">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.offersIds">OffersIds</label>
+                            <input type="number" class="form-control" name="offersIds"
+                                   ng-model="offersSerie.offersIds">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.inputAction">InputAction</label>
+                            <input type="text" class="form-control" name="inputAction"
+                                   ng-model="offersSerie.inputAction">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.outputAction">OutputAction</label>
+                            <input type="text" class="form-control" name="outputAction"
+                                   ng-model="offersSerie.outputAction">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.state">State</label>
+                            <input type="text" class="form-control" name="state"
+                                   ng-model="offersSerie.state">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="selecteurApp.offersSerie.Domain">Domain</label>
+                            <select class="form-control" name="Domain" ng-model="offersSerie.domain.id" ng-options="domain.id as domain.id for domain in domains">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteOffersSerieConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(offersSerie.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="selecteurApp.offersSerie.delete.question" translate-values="{id: '{{offersSerie.id}}'}">Are you sure you want to delete this OffersSerie?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="selecteurApp.offersSerie.author">Author</th>
+                    <th translate="selecteurApp.offersSerie.updateDate">UpdateDate</th>
+                    <th translate="selecteurApp.offersSerie.query">Query</th>
+                    <th translate="selecteurApp.offersSerie.name">Name</th>
+                    <th translate="selecteurApp.offersSerie.offersIds">OffersIds</th>
+                    <th translate="selecteurApp.offersSerie.inputAction">InputAction</th>
+                    <th translate="selecteurApp.offersSerie.outputAction">OutputAction</th>
+                    <th translate="selecteurApp.offersSerie.state">State</th>
+                    <th translate="selecteurApp.offersSerie.Domain">Domain</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="offersSerie in offersSeries">
+                    <td><a ui-sref="offersSerieDetail({id:offersSerie.id})">{{offersSerie.id}}</a></td>
+                    <td>{{offersSerie.author}}</td>
+                    <td>{{offersSerie.updateDate}}</td>
+                    <td>{{offersSerie.query}}</td>
+                    <td>{{offersSerie.name}}</td>
+                    <td>{{offersSerie.offersIds}}</td>
+                    <td>{{offersSerie.inputAction}}</td>
+                    <td>{{offersSerie.outputAction}}</td>
+                    <td>{{offersSerie.state}}</td>
+                    <td>{{offersSerie.Domain.id}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="offersSerieDetail({id:offersSerie.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(offersSerie.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(offersSerie.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pager">
+                <li ng-show="links['first']" ng-click="loadPage(links['first'])"><a href="#">&lt;&lt;</a></li>
+                <li ng-show="links['prev']" ng-click="loadPage(links['prev'])"><a href="#">&lt;</a></li>
+                <li ng-show="links['next']" ng-click="loadPage(links['next'])"><a href="#">&gt;</a></li>
+                <li ng-show="links['last']" ng-click="loadPage(links['last'])"><a href="#">&gt;&gt;</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

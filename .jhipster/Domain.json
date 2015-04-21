@@ -1,0 +1,62 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "CommercialOperation",
+            "relationshipNameCapitalized": "CommercialOperation",
+            "relationshipFieldName": "commercialOperation",
+            "otherEntityName": "commercialOperation",
+            "relationshipType": "one-to-one",
+            "otherEntityNameCapitalized": "CommercialOperation",
+            "ownerSide": false
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "Perimeter",
+            "relationshipNameCapitalized": "Perimeter",
+            "relationshipFieldName": "perimeter",
+            "otherEntityName": "perimeter",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Perimeter"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "OffersSerie",
+            "relationshipNameCapitalized": "OffersSerie",
+            "relationshipFieldName": "offersSerie",
+            "otherEntityName": "offersSerie",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "OffersSerie"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "author",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Author",
+            "fieldNameUnderscored": "author",
+            "fieldInJavaBeanMethod": "Author",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "updateTime",
+            "fieldType": "DateTime",
+            "fieldNameCapitalized": "UpdateTime",
+            "fieldNameUnderscored": "update_time",
+            "fieldInJavaBeanMethod": "UpdateTime",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": true,
+    "fieldsContainDate": false,
+    "changelogDate": "20150421154322",
+    "pagination": "pager",
+    "validation": false
+}
