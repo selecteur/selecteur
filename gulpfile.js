@@ -8,7 +8,7 @@ var gulp = require('gulp'),
     minifyCss = require('gulp-minify-css'),
     usemin = require('gulp-usemin'),
     uglify = require('gulp-uglify'),
-    compass = require('gulp-compass'),
+    sass = require('gulp-sass'),
     minifyHtml = require('gulp-minify-html'),
     imagemin = require('gulp-imagemin'),
     ngAnnotate = require('gulp-ng-annotate'),
@@ -23,6 +23,7 @@ var gulp = require('gulp'),
     wiredep = require('wiredep').stream,
     fs = require('fs'),
     runSequence = require('run-sequence'),
+    debug = require('gulp-debug'),
     browserSync = require('browser-sync');
 
 var karma = require('gulp-karma')({configFile: 'src/test/javascript/karma.conf.js'});
@@ -43,7 +44,7 @@ var endsWith = function (str, suffix) {
 };
 
 var parseString = require('xml2js').parseString;
-var parseVersionFromPomXml = function() {
+var parseVersionFromPomXml = function () {
     var version;
     var pomXml = fs.readFileSync('pom.xml', 'utf8');
     parseString(pomXml, function (err, result) {
@@ -53,56 +54,53 @@ var parseVersionFromPomXml = function() {
 };
 
 gulp.task('clean', function (cb) {
-  del([yeoman.dist], cb);
+    del([yeoman.dist], cb);
 });
 
 gulp.task('clean:tmp', function (cb) {
-  del([yeoman.tmp], cb);
+    del([yeoman.tmp], cb);
 });
 
-gulp.task('test', ['wiredep:test', 'ngconstant:dev'], function() {
+gulp.task('test', ['wiredep:test', 'ngconstant:dev'], function () {
     karma.once();
 });
 
-gulp.task('copy', function() {
+gulp.task('copy', function () {
     return es.merge(gulp.src(yeoman.app + 'i18n/**').
-              pipe(gulp.dest(yeoman.dist + 'i18n/')),
-              gulp.src(yeoman.app + 'assets/**/*.{woff,svg,ttf,eot}').
-              pipe(flatten()).
-              pipe(gulp.dest(yeoman.dist + 'assets/fonts/')));
+            pipe(gulp.dest(yeoman.dist + 'i18n/')),
+        gulp.src(yeoman.app + 'assets/**/*.{woff,svg,ttf,eot}').
+            pipe(flatten()).
+            pipe(gulp.dest(yeoman.dist + 'assets/fonts/')));
 });
 
-gulp.task('images', function() {
+gulp.task('images', function () {
     return gulp.src(yeoman.app + 'assets/images/**').
         pipe(imagemin({optimizationLevel: 5})).
         pipe(gulp.dest(yeoman.dist + 'assets/images')).
         pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('compass', function() {
-    return gulp.src(yeoman.scss + '**/*.scss').
-        pipe(compass({
-                project: __dirname,
-                sass: 'src/main/scss',
-                css: 'src/main/webapp/assets/styles',
-                generated_images: '.tmp/images/generated',
-                image: 'src/main/webapp/assets/images',
-                javascript: 'src/main/webapp/scripts',
-                font: 'src/main/webapp/assets/fonts',
-                import_path: 'src/main/webapp/bower_components',
-                relative: false
+gulp.task('sass', function () {
+    var appScss = gulp.src('**/*.scss', {
+        cwd: yeoman.scss
+    });
+
+    return appScss.
+        pipe(debug()).
+        pipe(sass({
+            includePath: yeoman.app +'bower_components/'
         })).
-        pipe(gulp.dest(yeoman.tmp + 'styles'));
+        pipe(gulp.dest(yeoman.app + 'assets/styles'));
 });
 
-gulp.task('styles', ['compass'], function() {
+gulp.task('styles', ['sass'], function () {
     return gulp.src(yeoman.app + 'assets/styles/**/*.css').
         pipe(gulp.dest(yeoman.tmp)).
         pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('serve', function() {
-    runSequence('wiredep:test', 'wiredep:app', 'ngconstant:dev', 'compass', function () {
+gulp.task('serve', function () {
+    runSequence('wiredep:test', 'wiredep:app', 'ngconstant:dev', 'sass', function () {
         var baseUri = 'http://localhost:' + yeoman.apiPort;
         // Routes to proxy to the backend. Routes ending with a / will setup
         // a redirect so that if accessed without a trailing slash, will
@@ -130,7 +128,7 @@ gulp.task('serve', function() {
             // Ensure trailing slash in routes that require it
             function (req, res, next) {
 
-                requireTrailingSlash.forEach(function(route){
+                requireTrailingSlash.forEach(function (route) {
                     if (url.parse(req.url).path === route) {
                         res.statusCode = 301;
                         res.setHeader('Location', route + '/');
@@ -161,7 +159,7 @@ gulp.task('serve', function() {
     });
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', function () {
     gulp.watch('bower.json', ['wiredep:test', 'wiredep:app']);
     gulp.watch(['Gruntfile.js', 'pom.xml'], ['ngconstant:dev']);
     gulp.watch(yeoman.scss + '**/*.scss', ['styles']);
@@ -184,8 +182,7 @@ gulp.task('wiredep:app', function () {
                 /angular-i18n/,  // localizations are loaded dynamically
                 /swagger-ui/,
                 'bower_components/bootstrap/' // Exclude Bootstrap LESS as we use bootstrap-sass
-            ],
-            ignorePath: /\.\.\/webapp\/bower_components\// // remove ../webapp/bower_components/ from paths of injected sass files
+            ]
         }))
         .pipe(gulp.dest('src/main/scss')));
 });
@@ -215,7 +212,7 @@ gulp.task('build', function () {
     runSequence('clean', 'copy', 'wiredep:app', 'ngconstant:prod', 'usemin');
 });
 
-gulp.task('usemin', function() {
+gulp.task('usemin', function () {
     runSequence('images', 'styles', function () {
         return gulp.src([yeoman.app + '**/*.html', '!' + yeoman.app + 'bower_components/**/*.html']).
             pipe(usemin({
@@ -226,7 +223,7 @@ gulp.task('usemin', function() {
                     rev()
                 ],
                 html: [
-                    minifyHtml({empty: true, conditionals:true})
+                    minifyHtml({empty: true, conditionals: true})
                 ],
                 js: [
                     ngAnnotate(),
@@ -239,11 +236,11 @@ gulp.task('usemin', function() {
     });
 });
 
-gulp.task('ngconstant:dev', function() {
+gulp.task('ngconstant:dev', function () {
     return ngConstant({
         dest: 'app.constants.js',
         name: 'selecteurApp',
-        deps:   false,
+        deps: false,
         noFile: true,
         interpolate: /\{%=(.+?)%\}/g,
         wrap: '/* jshint quotmark: false */\n"use strict";\n// DO NOT EDIT THIS FILE, EDIT THE GULP TASK NGCONSTANT SETTINGS INSTEAD WHICH GENERATES THIS FILE\n{%= __ngModule %}',
@@ -255,11 +252,11 @@ gulp.task('ngconstant:dev', function() {
         .pipe(gulp.dest(yeoman.app + 'scripts/app/'));
 });
 
-gulp.task('ngconstant:prod', function() {
+gulp.task('ngconstant:prod', function () {
     return ngConstant({
         dest: 'app.constants.js',
         name: 'selecteurApp',
-        deps:   false,
+        deps: false,
         noFile: true,
         interpolate: /\{%=(.+?)%\}/g,
         wrap: '/* jshint quotmark: false */\n"use strict";\n// DO NOT EDIT THIS FILE, EDIT THE GULP TASK NGCONSTANT SETTINGS INSTEAD WHICH GENERATES THIS FILE\n{%= __ngModule %}',
@@ -271,7 +268,7 @@ gulp.task('ngconstant:prod', function() {
         .pipe(gulp.dest(yeoman.tmp + 'scripts/app/'));
 });
 
-gulp.task('jshint', function() {
+gulp.task('jshint', function () {
     return gulp.src(['gulpfile.js', yeoman.app + 'scripts/**/*.js'])
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'));
@@ -281,6 +278,6 @@ gulp.task('server', ['serve'], function () {
     gutil.log('The `server` task has been deprecated. Use `gulp serve` to start a server');
 });
 
-gulp.task('default', function() {
+gulp.task('default', function () {
     runSequence('test', 'build');
 });
