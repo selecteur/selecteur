@@ -1,4 +1,10 @@
 {
   "opcom": {
+    "details": {
+      "title": "Commercial operation"
+    },
+    "perimeter": {
+      "title": "Product perimeter"
+    }
   }
 }

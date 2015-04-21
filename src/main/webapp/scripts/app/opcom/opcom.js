@@ -23,7 +23,19 @@ angular.module('selecteurApp')
                     translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                         $translatePartialLoader.addPart('opcom');
                         return $translate.refresh();
-                    }]
+                    }],
+                    opcom: function(){
+                        return {
+                            title: 'Informations sur l\'opération commerciale',
+                            productPerimeter: [{
+                                title: 'PAP Homme RED'
+                            },{
+                                title: 'Robe courte'
+                            },{
+                                title: 'Polo été'
+                            }]
+                        }
+                    }
                 }
             });
     });
