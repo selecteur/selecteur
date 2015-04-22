@@ -8,10 +8,10 @@
     <property name="now" value="current_timestamp" dbms="postgresql"/>
 
     <!--
-        Added the entity Perimiter.
+        Added the entity Perimeter.
     -->
-    <changeSet id="20150421154608" author="jhipster">
-        <createTable tableName="T_PERIMITER">
+    <changeSet id="20150421155643" author="jhipster">
+        <createTable tableName="T_PERIMETER">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
@@ -23,12 +23,12 @@
             <column name="domain_index" type="integer"/>
             <column name="domain_id" type="bigint"/>
         </createTable>
-        <dropDefaultValue tableName="T_PERIMITER" columnName="update_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="T_PERIMETER" columnName="update_time" columnDataType="datetime"/>
 
         
         <addForeignKeyConstraint baseColumnNames="domain_id"
-                                 baseTableName="T_PERIMITER"
-                                 constraintName="fk_perimiter_domain_id"
+                                 baseTableName="T_PERIMETER"
+                                 constraintName="fk_perimeter_domain_id"
                                  referencedColumnNames="id"
                                  referencedTableName="T_DOMAIN"/>
 
