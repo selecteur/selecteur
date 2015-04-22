@@ -6,7 +6,6 @@
 
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150421154322_added_entity_Domain.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20150421154608_added_entity_Perimiter.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150421154848_added_entity_OffersSerie.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150421155643_added_entity_Perimeter.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20150421160106_added_entity_Condition.xml" relativeToChangelogFile="false"/>
