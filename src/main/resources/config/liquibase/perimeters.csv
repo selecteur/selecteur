@@ -1,0 +1,3 @@
+id;author;update_time;name;state;is_template;domain_index;domain_id
+1;nboncoure;2015-04-24 00:00:00.0;Perimeter 001;UP;false;1;1
+2;nboncoure;2015-04-23 23:54:00.0;Perimeter 002;DOWN;false;2;1

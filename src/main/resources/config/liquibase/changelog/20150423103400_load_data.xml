@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <changeSet id="20150423103400" author="nboncoure">
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/domains.csv"
+                  separator=";"
+                  tableName="T_DOMAIN"/>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/commercial_operations.csv"
+                  separator=";"
+                  tableName="T_COMMERCIALOPERATION"/>
+        <loadData encoding="UTF-8"
+                  file="config/liquibase/perimeters.csv"
+                  separator=";"
+                  tableName="T_PERIMETER"/>
+    </changeSet>
+</databaseChangeLog>
