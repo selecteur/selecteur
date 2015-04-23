@@ -49,6 +49,9 @@ public class CommercialOperation implements Serializable {
     }
 
     public void setDomain(Domain domain) {
+        if (domain != null) {
+            domain.setCommercialOperation(this);
+        }
         this.domain = domain;
     }
 

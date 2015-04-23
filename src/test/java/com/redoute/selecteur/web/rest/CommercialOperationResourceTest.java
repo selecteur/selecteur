@@ -2,8 +2,11 @@ package com.redoute.selecteur.web.rest;
 
 import com.redoute.selecteur.Application;
 import com.redoute.selecteur.domain.CommercialOperation;
+import com.redoute.selecteur.domain.DetailedCommercialOperation;
 import com.redoute.selecteur.repository.CommercialOperationRepository;
 
+import com.redoute.selecteur.service.CommercialOperationService;
+import com.redoute.selecteur.web.rest.dto.DetailedCommercialOperationDTO;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,6 +47,9 @@ public class CommercialOperationResourceTest {
     @Inject
     private CommercialOperationRepository commercialOperationRepository;
 
+    @Inject
+    private CommercialOperationService commercialOperationService;
+
     private MockMvc restCommercialOperationMockMvc;
 
     private CommercialOperation commercialOperation;
@@ -52,7 +58,7 @@ public class CommercialOperationResourceTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         CommercialOperationResource commercialOperationResource = new CommercialOperationResource();
-        ReflectionTestUtils.setField(commercialOperationResource, "commercialOperationRepository", commercialOperationRepository);
+        ReflectionTestUtils.setField(commercialOperationResource, "commercialOperationService", commercialOperationService);
         this.restCommercialOperationMockMvc = MockMvcBuilders.standaloneSetup(commercialOperationResource).build();
     }
 
@@ -70,7 +76,7 @@ public class CommercialOperationResourceTest {
         // Create the CommercialOperation
         restCommercialOperationMockMvc.perform(post("/api/commercialOperations")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
-                .content(TestUtil.convertObjectToJsonBytes(commercialOperation)))
+                .content(TestUtil.convertObjectToJsonBytes(new DetailedCommercialOperationDTO(new DetailedCommercialOperation(commercialOperation)))))
                 .andExpect(status().isCreated());
 
         // Validate the CommercialOperation in the database
