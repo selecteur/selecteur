@@ -4,7 +4,8 @@
 'use strict';
 
 angular.module('selecteurApp')
-    .controller('OpcomController', function ($scope,translatePartialLoader, opcom) {
+    .controller('OpcomController', function ($scope,translatePartialLoader, opcom, perimeters) {
         $scope.opcom = opcom;
+        $scope.perimeters = perimeters;
 
     });

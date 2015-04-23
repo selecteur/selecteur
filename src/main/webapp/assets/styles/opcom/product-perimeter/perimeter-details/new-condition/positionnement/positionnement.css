@@ -1,0 +1,15 @@
+.positionnement {
+  display: flex;
+  flex-direction: row; }
+  .positionnement .positionnement-red {
+    background-color: red;
+    text-align: center;
+    flex-grow: 1; }
+  .positionnement .positionnement-yellow {
+    background-color: yellow;
+    text-align: center;
+    flex-grow: 1; }
+  .positionnement .positionnement-green {
+    background-color: green;
+    text-align: center;
+    flex-grow: 1; }

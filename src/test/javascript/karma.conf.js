@@ -35,6 +35,7 @@ module.exports = function (config) {
             'main/webapp/bower_components/bootstrap/dist/js/bootstrap.js',
             'main/webapp/bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js',
             'main/webapp/bower_components/angular-bootstrap-slider/slider.js',
+            'main/webapp/bower_components/angular-ui-grid/ui-grid.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

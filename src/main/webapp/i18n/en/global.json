@@ -5,6 +5,8 @@
         "menu": {
             "home": "Home",
             "opcom": "Commercial Operation",
+            "perimeters": "Perimeters",
+            "offers": "Offers",
             "entities": {
                 "main": "Entities",
                 "domain": "Domain",

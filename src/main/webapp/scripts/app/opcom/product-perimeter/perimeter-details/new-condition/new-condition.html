@@ -1,0 +1,23 @@
+<div class="panel panel-default new-condition">
+    <div class="panel-heading">Nouvelle condition</div>
+    <div class="panel-body" ng-if="new">
+        <tabset>
+            <tab ng-repeat="univers in univers" heading="{{univers.name}}">
+                <div class="new-condition-picker">
+                    <ul ng-repeat="surfamille in univers.surfamilles">
+                        <li>{{surfamille.name}}</li>
+                        <li ng-repeat="famille in surfamille.familles" ng-click="toggle()">{{famille.name}} <span
+                                class="badge">{{famille.nbArticle}}</span></li>
+                    </ul>
+                </div>
+            </tab>
+        </tabset>
+    </div>
+    <div style="display:flex;flex-direction: row; margin:15px;" ng-if="!new">
+        <new-condition-critere></new-condition-critere>
+        <new-condition-categories></new-condition-categories>
+    </div>
+    <new-condition-articles articles="articles" ng-if="!new"></new-condition-articles>
+
+
+</div>

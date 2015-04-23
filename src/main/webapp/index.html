@@ -15,11 +15,15 @@
         <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
         <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css" />
+        <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css assets/styles/main.css -->
         <link rel="stylesheet" href="assets/styles/main.css">
         <link rel="stylesheet" href="assets/styles/opcom/opcom.css">
+        <link rel="stylesheet" href="assets/styles/opcom/product-perimeter/perimeter-details/new-condition/new-condition.css">
+        <link rel="stylesheet" href="assets/styles/opcom/product-perimeter/perimeter-details/new-condition/positionnement/positionnement.css">
+
         <!-- endbuild -->
     </head>
     <body ng-app="selecteurApp">
@@ -71,6 +75,7 @@
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
         <script src="bower_components/angular-bootstrap-slider/slider.js"></script>
+        <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -98,6 +103,7 @@
         <script src="scripts/components/navbar/navbar.controller.js"></script>
         <script src="scripts/components/user/user.service.js"></script>
         <script src="scripts/components/util/truncate.filter.js"></script>
+        <script src="scripts/components/util/startat.filter.js"></script>
         <script src="scripts/components/util/base64.service.js"></script>
         <script src="scripts/components/util/parse-links.service.js"></script>
         <script src="scripts/app/account/account.js"></script>
@@ -135,9 +141,21 @@
         <script src="scripts/app/account/sessions/sessions.js"></script>
         <script src="scripts/app/account/sessions/sessions.controller.js"></script>
         <script src="scripts/app/opcom/opcom.js"></script>
+        <script src="scripts/app/opcom/opcom.service.js"></script>
+        <script src="scripts/app/opcom/univers.service.js"></script>
+        <script src="scripts/app/opcom/articles.service.js"></script>
+        <script src="scripts/app/opcom/opcom.firebase.service.js"></script>
+        <script src="scripts/app/opcom/opcom-list/opcom-list.controller.js"></script>
         <script src="scripts/app/opcom/opcom.controller.js"></script>
         <script src="scripts/app/opcom/opcom-details/opcom-details.directive.js"></script>
         <script src="scripts/app/opcom/product-perimeter/product-perimeter.directive.js"></script>
+        <script src="scripts/app/opcom/product-perimeter/perimeter-details/product-perimeter-details.directive.js"></script>
+        <script src="scripts/app/opcom/product-perimeter/perimeter-details/condition/condition.directive.js"></script>
+        <script src="scripts/app/opcom/product-perimeter/perimeter-details/new-condition/new-condition.directive.js"></script>
+        <script src="scripts/app/opcom/product-perimeter/perimeter-details/new-condition/new-condition-articles.directive.js"></script>
+        <script src="scripts/app/opcom/product-perimeter/perimeter-details/new-condition/new-condition-critere.directive.js"></script>
+        <script src="scripts/app/opcom/product-perimeter/perimeter-details/new-condition/new-condition-categories.directive.js"></script>
+        <script src="scripts/app/opcom/product-perimeter/perimeter-details/new-condition/positionnement/positionnement.directive.js"></script>
         <script src="scripts/app/entities/domain/domain.js"></script>
         <script src="scripts/app/entities/domain/domain.controller.js"></script>
         <script src="scripts/app/entities/domain/domain-detail.controller.js"></script>

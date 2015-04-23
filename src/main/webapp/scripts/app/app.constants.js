@@ -7,4 +7,6 @@ angular.module("selecteurApp")
 
 .constant("VERSION", "0.0.1-SNAPSHOT")
 
+.constant("FIREBASE_URL", "https://shining-torch-6548.firebaseio.com/")
+
 ;
