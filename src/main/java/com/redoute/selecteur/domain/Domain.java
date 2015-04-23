@@ -1,5 +1,6 @@
 package com.redoute.selecteur.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -38,6 +39,7 @@ public class Domain implements Serializable {
     private DateTime updateTime;
 
     @OneToOne(mappedBy = "domain")
+    @JsonBackReference
     private CommercialOperation commercialOperation;
 
     @OneToMany(mappedBy = "domain")

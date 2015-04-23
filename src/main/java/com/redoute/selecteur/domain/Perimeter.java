@@ -1,5 +1,6 @@
 package com.redoute.selecteur.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -50,6 +51,7 @@ public class Perimeter implements Serializable {
     private Integer domainIndex;
 
     @ManyToOne
+    @JsonBackReference
     private Domain domain;
 
     @OneToMany(mappedBy = "perimeter")
