@@ -14,8 +14,10 @@ import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletCont
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.embedded.MimeMappings;
 import org.springframework.boot.context.embedded.ServletContextInitializer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.web.filter.ShallowEtagHeaderFilter;
 
 import javax.inject.Inject;
 import javax.servlet.*;
@@ -55,6 +57,11 @@ public class WebConfigurer implements ServletContextInitializer, EmbeddedServlet
             initH2Console(servletContext);
         }
         log.info("Web application fully configured");
+    }
+
+    @Bean
+    public Filter shallowETagHeaderFilter() {
+        return new ShallowEtagHeaderFilter();
     }
 
     /**
