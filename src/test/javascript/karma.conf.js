@@ -29,6 +29,12 @@ module.exports = function (config) {
             'main/webapp/bower_components/angular-cache-buster/angular-cache-buster.js',
             'main/webapp/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
             'main/webapp/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+            'main/webapp/bower_components/firebase/firebase.js',
+            'main/webapp/bower_components/underscore/underscore.js',
+            'main/webapp/bower_components/angular-ui-select/dist/select.js',
+            'main/webapp/bower_components/bootstrap/dist/js/bootstrap.js',
+            'main/webapp/bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js',
+            'main/webapp/bower_components/angular-bootstrap-slider/slider.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',
