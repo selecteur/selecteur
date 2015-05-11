@@ -129,6 +129,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .antMatchers("/api-docs/**").hasAuthority(AuthoritiesConstants.ADMIN)
             .antMatchers("/protected/**").authenticated();
 
+        http.headers().cacheControl().disable();
+
     }
 
     @Bean

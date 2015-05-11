@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('selecteurApp', ['LocalStorageModule', 'tmh.dynamicLocale',
-    'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster', 'infinite-scroll', 'ui.bootstrap'])
+    'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster',
+    'infinite-scroll', 'ui.bootstrap', 'ui.select', 'ui.bootstrap-slider','ui.grid','ui.grid.pagination'])
 
     .run(function ($rootScope, $location, $window, $http, $state, $translate, Auth, Principal, Language, ENV, VERSION) {
         $rootScope.ENV = ENV;
@@ -89,4 +90,6 @@ angular.module('selecteurApp', ['LocalStorageModule', 'tmh.dynamicLocale',
 
         tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useCookieStorage('NG_TRANSLATE_LANG_KEY');
+    }).config(function(uiSelectConfig) {
+        uiSelectConfig.theme = 'bootstrap';
     });

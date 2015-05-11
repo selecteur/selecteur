@@ -1,0 +1,28 @@
+.new-condition {
+  & .new-condition-picker {
+    padding: 10px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: row;
+    & ul {
+      list-style-type: none;
+      flex-grow: 1;
+
+      & li {
+        text-align: center;
+        text-transform: capitalize;
+        padding: 5px;
+        cursor: pointer;
+
+        &:first-child {
+          text-decoration: underline;
+          font-size: large;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
